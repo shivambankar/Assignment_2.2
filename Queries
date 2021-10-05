@@ -1,0 +1,65 @@
+CREATE TYPE gender AS ENUM ('M', 'F');
+CREATE TYPE occurence AS ENUM ('YEARLY', 'ONETIME');
+CREATE TABLE "User" (uid SERIAL PRIMARY KEY ,				
+					name char(255) not null,
+					gender gender,
+					email VARCHAR(255) UNIQUE not null )
+select * from "User"
+
+CREATE TABLE "Eventss" (id SERIAL PRIMARY KEY,
+					  uid SERIAL not null references "User"(uid),					                   
+	                  name char(255),
+					  occurence occurence not null,
+					  startDate date not null,
+					  endDate date not null)	
+select * from "Events"	
+
+insert into "User"(name,gender,email) values('shivam','M','sh@gmail.com')	
+insert into "User"(name,gender,email) values('sita','F','si@gmail.com')	
+insert into "User"(name,gender,email) values('shiv','M','shi@gmail.com')
+insert into "User"(name,gender,email) values('gita','F','gi@gmail.com')			
+insert into "User"(name,gender,email) values('om','M','om@gmail.com')	
+insert into "User"(name,gender,email) values('omm','M','omm@gmail.com')
+insert into "User"(name,gender,email) values('o','M','o@gmail.com')
+insert into "User"(name,gender,email) values('a','F','a@gmail.com')
+insert into "User"(name,gender,email) values('m','M','m@gmail.com')
+insert into "User"(name,gender,email) values('n','M','n@gmail.com')
+insert into "User"(name,gender,email) values('b','F','b@gmail.com')
+insert into "User"(name,gender,email) values('c','M','c@gmail.com')
+insert into "User"(name,gender,email) values('d','F','d@gmail.com')
+insert into "User"(name,gender,email) values('e','M','e@gmail.com')
+insert into "User"(name,gender,email) values('f','F','f@gmail.com')
+insert into "User"(name,gender,email) values('g','M','g@gmail.com')
+insert into "User"(name,gender,email) values('h','F','h@gmail.com')
+insert into "User"(name,gender,email) values('i','F','i@gmail.com')
+insert into "User"(name,gender,email) values('j','M','j@gmail.com')
+insert into "User"(name,gender,email) values('k','F','k@gmail.com')
+
+
+insert into "Eventss"(name,occurence,startDate,endDate) values('avtaar','YEARLY','1/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('tech','ONETIME','2/1/2022','3/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('cultural','YEARLY','1/1/2022','4/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('political','ONETIME','5/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('tech','YEARLY','1/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('mech','ONETIME','1/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('avtaar','YEARLY','6/1/2022','8/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('fest','ONETIME','1/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('tech','YEARLY','1/1/2022','6/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('mech','ONETIME','1/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('avtaar','YEARLY','1/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('web','ONETIME','1/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('app','YEARLY','1/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('web','ONETIME','4/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('app','YEARLY','1/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('avtaar','ONETIME','1/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('tech','YEARLY','6/1/2022','7/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('mech','ONETIME','1/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('fest','YEARLY','1/1/2022','2/2/2022')
+insert into "Eventss"(name,occurence,startDate,endDate) values('avtaar','ONETIME','4/1/2022','8/2/2022')
+
+SELECT * FROM "Eventss" WHERE endDate='2/2/2022'
+SELECT * FROM "User" WHERE (uid in(1,2,6,8,9))
+SELECT * FROM "Eventss" WHERE uid=1
+
+
+
