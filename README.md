@@ -1,2 +1,2 @@
-# Assignment_2.2
+# SQL DB queries for User-Events
 I have used Postgres
